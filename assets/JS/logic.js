@@ -25,7 +25,7 @@ var wrongLetters = [];
 //Counters
 var winCount = 0;
 var lossCount = 0;
-var guessesLeft = 9;
+var guessesLeft = 6;
 var rightGuessCounter = 0;
 //FUNCTIONS
 //----------------------------------------
@@ -42,7 +42,7 @@ numBlanks = lettersInWord.length;
 //===========================================================
 letterGuessed = 0;
 rightGuessCounter = 0;
-guessesLeft = 9;
+guessesLeft = 6;
 wrongLetters =[];
 blanksAndSuccesses =[];
 doubleWord = ['a','b','c',
@@ -69,7 +69,7 @@ numBlanks = lettersInWord.length;
 //RESET
 //===========================================================
 rightGuessCounter = 0;
-guessesLeft = 9;
+guessesLeft = 6;
 wrongLetters =[];
 blanksAndSuccesses =[];
 doubleWord = ['a','b','c',
