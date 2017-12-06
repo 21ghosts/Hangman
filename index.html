@@ -10,7 +10,7 @@
 	<!-- Theme Bootstrap-->
     <link href="https://bootswatch.com/3/sandstone/bootstrap.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    
 </head>
 
 <body>
@@ -51,6 +51,18 @@
 		<div class="panel-body">
 			Loss Counter:  <span id="lossCounter">0</span>
 		</div>
+	</div>
+
+	<div id="player">
+		<audio id="myAudio" autoplay loop>
+			<source src="assets/music/Nujabes - Shiki No Uta [feat. MINMI].mp3" type="audio/mpeg">
+				
+			Your browser does not support the audio element.
+		  </audio>
+		  
+		  <button onclick="setHalfVolume()" type="button">Set volume to 0.2</button>
+		  <button onclick="setFullVolume()" type="button">Set volume to 1.0</button>
+		  
 	</div>
 	
 </div>
