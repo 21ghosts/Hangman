@@ -1,4 +1,4 @@
-//GLOBAL VARIABLES
+// GLOBAL VARIABLES
 //---------------------------------------
 // Used to record how many times a letter can be pressed
 var doubleWord = ['a','b','c',
@@ -10,36 +10,39 @@ var doubleWord = ['a','b','c',
 's','t','u',
 'v','w','x',
 'y','z'];
-//Holds the all the words
-var wordBank =['Americano', 'Cappucino', 'Espresso', 'Cubano', 'Latte', 'Macchiato', 'Flat White', 'Mocha', 'Frappe','Black'];
-//Holds chosenWord
+// Holds the all the words
+var wordBank =['americano', 'cappucino', 'espresso', 'cubano', 'latte', 'macchiato', 'mocha', 'frappe','black'];
+// Holds chosenWord
 var chosenWord = "";
-//Holds letters in word
+// Holds letters in word
 var lettersInWord = [];
-//Holds number of blanks in word
+// Holds number of blanks in word
 var numBlanks = 0;
-//Holds Blanks and successful guesses
+// Holds Blanks and successful guesses
 var blanksAndSuccesses =[];
-//Holds Wrong guesses
+// Holds Wrong guesses
 var wrongLetters = [];
-//Counters
+// Counters
 var winCount = 0;
 var lossCount = 0;
 var guessesLeft = 6;
 var rightGuessCounter = 0;
-//FUNCTIONS
-//----------------------------------------
+
+// FUNCTIONS
+// ----------------------------------------
+
 function reset()
 {
-//Chooses word randombly from the wordBank
+// Chooses word randombly from the wordBank
 chosenWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-//Splits the choosen word into individual letters
+// Splits the choosen word into individual letters
 lettersInWord = chosenWord.split('');
-//Get the number of blanks
+// Get the number of blanks
 numBlanks = lettersInWord.length;
 
-//RESET
-//===========================================================
+// RESET
+// ===========================================================
+
 letterGuessed = 0;
 rightGuessCounter = 0;
 guessesLeft = 6;
@@ -59,15 +62,16 @@ startGame();
 }
 function startGame()
 {
-//Chooses word randombly from the wordBank
+// Chooses word randombly from the wordBank
 chosenWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-//Splits the choosen word into individual letters
+// Splits the choosen word into individual letters
 lettersInWord = chosenWord.split('');
-//Get the number of blanks
+// Get the number of blanks
 numBlanks = lettersInWord.length;
 
-//RESET
-//===========================================================
+// RESET
+// ===========================================================
+
 rightGuessCounter = 0;
 guessesLeft = 6;
 wrongLetters =[];
@@ -82,14 +86,14 @@ doubleWord = ['a','b','c',
 	'v','w','x',
 	'y','z'];
 
-//Populate blanks
+// Populate blanks
 for(var i = 0; i< numBlanks; i++)
 {
 blanksAndSuccesses.push('_');
 document.getElementById('wordToGuess').innerHTML = blanksAndSuccesses;
 }
 
-//Changes HTML 
+// Changes HTML 
 document.getElementById('wordToGuess').innerHTML = blanksAndSuccesses.join(' ');
 document.getElementById('numGuesses').innerHTML = guessesLeft;
 document.getElementById('winCounter').innerHTML = winCount;
@@ -105,13 +109,13 @@ console.log(blanksAndSuccesses);
 function compareLetters(userKey)
 {
 console.log('WORKING!');
-//If user key exist in choosen word then perform this function 
+// If user key exist in choosen word then perform this function 
 if(chosenWord.indexOf(userKey) > -1)
 {
-  //Loops depending on the amount of blanks 
+  // Loops depending on the amount of blanks 
   for(var i = 0; i < numBlanks; i++)
   {
-	  //Fills in right index with user key
+	  // Fills in right index with user key
 	  if(lettersInWord[i] === userKey)
 	  {
 		  rightGuessCounter++;
@@ -119,10 +123,10 @@ if(chosenWord.indexOf(userKey) > -1)
 		  document.getElementById('wordToGuess').innerHTML = blanksAndSuccesses.join(' ');
 	  }	
   }
-  //Test / Debug
+  // Test / Debug
   console.log(blanksAndSuccesses);
 }
-//Wrong Keys
+// Wrong Keys
 else
 {
   wrongLetters.push(userKey);
@@ -143,9 +147,9 @@ function winLose()
 // When number blanks if filled with right words then you win
 if(rightGuessCounter === numBlanks)
 {
-//Counts Wins 
+// Counts Wins 
 winCount++;
-//Changes HTML
+// Changes HTML
 document.getElementById('winCounter').innerHTML = winCount;
 alert('You Win');
 reset();
@@ -153,18 +157,19 @@ reset();
 // When number of Guesses reaches 0 then You lose
 else if(guessesLeft === 0)
 {
-//Counts losses
+// Counts losses
 lossCount++;
-//Changes HTML
+// Changes HTML
 document.getElementById('lossCounter').innerHTML = lossCount;
 alert('You Lose');
 reset();
 }
 }
 
-//MAIN PROCCESS
-//-------------------------------------------	
-//Initiates the Code
+// MAIN PROCCESS
+// -------------------------------------------	
+
+// Initiates the Code
 startGame();
 
 document.onkeyup = function(event)
@@ -187,7 +192,7 @@ winLose();
 
 }
 
-// Music Volume Choice (slight freedom)
+// Music Volume Choice 
 var x = document.getElementById('myAudio');
 
 function getVolume() { 
